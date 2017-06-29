@@ -38,8 +38,7 @@ float t_test(vector<float> list1, vector<float> list2)
     float n2   = list2.size();
 
     float poolV = ( (n1-1)*pow(SD1,2) + (n2-1)*pow(SD2,2) ) / (n1+n2-2); 
-    float t = (avr1 - avr2) / sqrt(poolV * (1/n1 + 1/n2));
-    return t;
+    return (avr1 - avr2) / sqrt(poolV * (1/n1 + 1/n2));
 }
 
 int main(int argc, char *argv[])
