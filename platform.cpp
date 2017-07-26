@@ -41,6 +41,14 @@ float t_test(vector<float> list1, vector<float> list2)
     return (avr1 - avr2) / sqrt(poolV * (1/n1 + 1/n2));
 }
 
+float f_test(vector<float> list1, vector<float> list2)
+{
+    float SD1  = calc_SD(list1);
+    float SD2  = calc_SD(list2);
+
+    return pow( SD1,2 ) / pow( SD2,2 );
+}
+
 int main(int argc, char *argv[])
 {
     ifstream ifs(argv[1]);
@@ -92,6 +100,7 @@ int main(int argc, char *argv[])
             array2.push_back(stof(table[i][1]));
         }
         cout<< "t = " << "\t" << t_test(array1,array2) << "\t" << endl;
+        cout<< "f = " << "\t" << f_test(array1,array2) << "\t" << endl;
         cout << endl;
     }
     return 0;
